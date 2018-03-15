@@ -1,0 +1,26 @@
+html, body {
+	margin: 0;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+div {
+	width: 100%;
+	background-color: #F6F8FA;
+	border-top: 1px solid #D6D8DB;
+	border-bottom: 1px solid #D6D8DB;
+}
+
+h1, h2 {
+	font-family: Arial, sans-serif;
+	text-align: center;
+}
+
+img {
+	display: none;
+}
