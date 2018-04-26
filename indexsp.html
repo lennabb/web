@@ -8,10 +8,10 @@
 
 			    const img = document.createElement('img');
 		        img.src = 'http://89.110.156.24/stats/spvis.php?id=' + id;
-		        img.onload = function() {
-		            location.href = 'https://www.eventbrite.com/e/programmieren-lernen-mit-python-ibm-tickets-44344607916';
-		        };
 		        document.body.appendChild(img);
+		        setTimeout(function() {
+		        	location.href = 'https://www.eventbrite.com/e/programmieren-lernen-mit-python-ibm-tickets-44344607916';
+		        }, 1000);
 			}
 
 			// in case the document is already rendered
