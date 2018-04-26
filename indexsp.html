@@ -5,10 +5,13 @@
 		<script>
 			function run() {
 			    const id = document.location.toString().split('id=')[1];
-			    document.getElementById('image').onload = function() {
-			    	location.href = 'https://www.eventbrite.com/e/programmieren-lernen-mit-python-ibm-tickets-44344607916';
-			    };
-				document.getElementById('image').src = 'http://89.110.156.24/stats/spvis.php?id=' + id;
+
+			    const img = document.createElement('img');
+		        img.src = 'http://89.110.156.24/stats/spvis.php?id=' + id;
+		        img.onload = function() {
+		            location.href = 'https://www.eventbrite.com/e/programmieren-lernen-mit-python-ibm-tickets-44344607916';
+		        };
+		        document.body.appendChild(img);
 			}
 
 			// in case the document is already rendered
@@ -25,7 +28,6 @@
 		<div>
 			<h1>Avion</h1>
 			<h2>We Are Coming Soon!</h2>
-			<img src="" id="image"/>
 		</div>
 	</body>
 </html>
