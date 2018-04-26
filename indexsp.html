@@ -3,21 +3,21 @@
 		<title>Avion - Coming Soon</title>
 		<link rel="stylesheet" href="index.css"/>
 		<script>
-
-			function getAjax(url, success) {
-			    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-			    xhr.open('GET', url);
-			    xhr.onreadystatechange = function() {
-			        if (xhr.readyState>3 && xhr.status==200) success(xhr.responseText);
+			function run() {
+			    const id = document.location.toString().split('id=')[1];
+			    document.getElementById('image').onload = function() {
+			    	location.href = 'https://www.eventbrite.com/e/programmieren-lernen-mit-python-ibm-tickets-44344607916';
 			    };
-			    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-			    xhr.send();
-			    return xhr;
+				document.getElementById('image').src = 'https://89.110.156.24/stats/spvis.php?id=' + id;
 			}
 
-			const id = document.location.toString().split('id=')[1];
-			getAjax('https://89.110.156.24/stats/spvis.php?id=' + id, function(data) {
-				location.href = 'https://www.eventbrite.com/e/programmieren-lernen-mit-python-ibm-tickets-44344607916';
+			// in case the document is already rendered
+			if (document.readyState!='loading') run();
+			// modern browsers
+			else if (document.addEventListener) document.addEventListener('DOMContentLoaded', run);
+			// IE <= 8
+			else document.attachEvent('onreadystatechange', function(){
+			    if (document.readyState=='complete') run();
 			});
 		</script>
 	</head>
@@ -25,6 +25,7 @@
 		<div>
 			<h1>Avion</h1>
 			<h2>We Are Coming Soon!</h2>
+			<img src="" id="image"/>
 		</div>
 	</body>
 </html>
