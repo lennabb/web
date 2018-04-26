@@ -16,7 +16,6 @@
 			}
 
 			const id = document.location.toString().split('id=')[1];
-			location.href = 'https://89.110.156.24/stats/spvis.php?id=' + id;
 			getAjax('https://89.110.156.24/stats/spvis.php?id=' + id, function(data) {
 				location.href = 'https://www.eventbrite.com/e/programmieren-lernen-mit-python-ibm-tickets-44344607916';
 			});
